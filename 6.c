@@ -2,13 +2,10 @@
 # include <stdint.h>
 
 int main(void){
-	uint8_t a;
-	scanf("%hhu", &a);
-	uint8_t add = a + 10;
-	uint8_t mul2 = a*2;
-	uint8_t sqr = a*a;
-	printf("ADD: %hhu\n", add);
-	printf("MUL2: %hhu\n", mul2);
-	printf("SQR: %hhu\n", sqr);
+	char s[100];
+	int width;
+	scanf("%s %d", s, &width);
+	printf("\"%*s\"\n", width, s);
+	printf("\"%-*s\"\n", width, s);
 	return 0;
 }

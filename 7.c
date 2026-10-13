@@ -1,15 +1,11 @@
 #include <stdio.h>
-
+#include <string.h>
+#define DISTRO "LinuxDistro"
 int main(void){
-	long double a;
-	scanf("%Lf", &a);
-	double b = a;
-	float c = a;
-	printf("FLOAT: %.6f\n", c);
-	printf("DOUBLE: %.6f\n", b);
-	printf("LDOUBLE: %.6Lf\n", a);
-	printf("FLOAT+1: %.6f\n", c+1);
-	printf("DOUBLE+1: %.6f\n", b+1);
-	printf("LDOUBLE+1: %.6Lf\n", a+1);
+	const char year[] = "2026";
+	printf("DISTRO: %s\n", DISTRO);
+	printf("RDATE: %s\n", year);
+	printf("STRLEN: %zu\n", strlen(DISTRO));
+	printf("SIZEOF: %zu\n", sizeof(DISTRO));
 	return 0;
 }

@@ -1,15 +1,10 @@
 #include <stdio.h>
-
+#include <string.h>
 int main(void){
-	int a,b,c;
-	scanf("%d %x %o",&a,&b,&c);
-	int u1 = a;
-	printf("UNIT_ID: %d\n", u1);
-	int u2 = b;
-	printf("UNIT_VERSION: %d\n", u2);
-	int u3 = c;
-	printf("UNIT_STATUS: %d\n", u3);
-	int sum = u1+u2+u3;
-	printf("SUM: %d\n", sum);
+	char a[20] = "СибГУТи";
+	printf("SIZEOF: %zu\n", sizeof(a));
+	size_t st = strlen(a);
+	printf("STRLEN: %zu\n", st);
+	printf("FREE_BYTES: %zu\n", sizeof(a) - (strlen(a)+1));
 	return 0;
-	}
+}

@@ -1,17 +1,12 @@
 #include <stdio.h>
-#include <stdint.h>
+#include <string.h>
+#include <wchar.h>
 
 int main(void){
-	int id;
-	int stat;
-	float v;
-	scanf("%x %o %f", &id, &stat, &v);
-	uint8_t s = (uint8_t)stat;
-	uint16_t checksum = id+s;
-	printf("PACKET_ID: %x\n", id);
-	printf("STATUS_CODE: %d\n", s);
-	printf("STATUS_CHAR: %c\n",s);
-	printf("VOLTAGE: %.2f\n", v);
-	printf("CHECKSUM: %d\n", checksum);
+	wchar_t a[100];
+	wchar_t b[100];
+	wchar_t c[5];
+	wscanf(L"%ls %ls %ls", &a, &b, &c);
+	wprintf(L"\"%-15ls|%20ls|%.5ls\"\n", a, b, c);
 	return 0;
 }

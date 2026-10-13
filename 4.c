@@ -1,15 +1,10 @@
 #include <stdio.h>
-#include <limits.h>
+#include <string.h>
 
 int main(void){
-	printf("INT_MIN: %d\n", INT_MIN);
-	printf("INT_MAX: %d\n",INT_MAX);
-	printf("UINT_MAX: %u\n", UINT_MAX);
-	if ((unsigned int)INT_MAX * 2u + 1u == UINT_MAX) {
-		printf("RANGE_OK: %d\n", 1);
-	} else {
-		printf("RANGE_OK: %d\n", 0);
-	}
-
+	char s[] = "\x48\x65\x6C\x6C\x6F\t\x57\x6F\x72\x6C\x64";
+	printf("%s\n", s);
+	printf("%zu\n", strlen(s));
+	printf("%zu\n", sizeof(s));
 	return 0;
 }
