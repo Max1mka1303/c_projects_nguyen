@@ -1,12 +1,13 @@
 #include <stdio.h>
-#include <string.h>
 int main(void){
-	char s[100];
-	scanf("%s", s);
-	int l = (int)strlen(s)+5;
-	printf("\"%s\"\n", s);
-	printf("\"%20s\"\n", s);
-	printf("\"%-20s\"\n", s);
-	printf("\"%*s\"\n", l, s);
+	int n;
+	scanf("%d", &n);
+	int val = 1;
+	int i = 0;
+	while(i++ < n) {
+		printf("%d ", val);
+		val *= 5;
+	}
+	printf("\n");
 	return 0;
 }

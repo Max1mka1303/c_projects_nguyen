@@ -1,10 +1,9 @@
 #include <stdio.h>
-#include <string.h>
+#define KOEF 16
 int main(void){
-	char a[20] = "СибГУТи";
-	printf("SIZEOF: %zu\n", sizeof(a));
-	size_t st = strlen(a);
-	printf("STRLEN: %zu\n", st);
-	printf("FREE_BYTES: %zu\n", sizeof(a) - (strlen(a)+1));
+	int val;
+	while(scanf("%d", &val) == 1 && val > 0) {
+		printf("Объём, ст.л=%d, чашки=%d, ст.л=%d, коэффициент=%d", val, val / KOEF, val % KOEF, KOEF);
+	}
 	return 0;
 }
