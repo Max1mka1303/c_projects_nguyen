@@ -1,17 +1,17 @@
 #include <stdio.h>
-#define KOEF 1000
+#include <math.h>
 
 
-int v_to_mv(double value){
-	int mv = (int)value * KOEF;
-	return mv;
+double calc(double a, double b){
+	double rez = (a-b)/(sqrt(a*a - b*b));
+	return rez;
 }
 
 
 int main(void){
-	double value;
-	while (scanf("%lf", &value) == 1){
-		printf("%d", v_to_mv(value));
+	double a, b;
+	while (scanf("%lf %lf", &a, &b) == 2){
+		printf("%.4lf\n", calc(a,b));
 	}
 	return 0;
 }

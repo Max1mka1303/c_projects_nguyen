@@ -1,12 +1,14 @@
 #include <stdio.h>
-#include <stdint.h>
+#define HEIGHT 5
 int main(void){
-	uint16_t d,t;
-	scanf("%hd %hd", &d, &t);
-	float rez = (float)(d/t);
-	printf("%f\n", rez);
-	printf("%llu\n",(unsigned long long)sizeof(d));
-	printf("%llu\n",(unsigned long long)sizeof(t));
-	printf("%llu\n",(unsigned long long)sizeof(rez));
+	for (int start = 1; start <= HEIGHT; start++){
+		for (int start1 = 1; start1 <= start; start1++){
+			printf("1 ");
+		}
+		for (int start1 = 1; start1 <= HEIGHT - start; start1++){
+			printf("0 ");
+		}
+		printf("\n");
+	};
 	return 0;
 }

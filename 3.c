@@ -1,13 +1,13 @@
 #include <stdio.h>
+#include <math.h>
 int main(void){
 	int n;
-	scanf("%d", &n);
-	int val = 1;
-	int i = 0;
-	while(i++ < n) {
-		printf("%d ", val);
-		val *= 5;
+	while (scanf("%d", &n)==1 && n > 0){
+		double x = 0.0;
+		for (int i = 1; i <= n; i++){
+			x += 1.0/sqrt(i);
+		}
+		printf("%.6f\n", x);
 	}
-	printf("\n");
 	return 0;
 }
