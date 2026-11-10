@@ -1,12 +1,14 @@
 #include <stdio.h>
-#include <math.h>
+#include <ctype.h>
 int main(void){
-	double x = 0.0;
-	int i = 0;
-	for (float x; x < M_PI; x+=0.5){
-		double y = cos(x * (M_PI/180.0));
-		printf("%d %.4f %.4f\n", i, x, y);
-		i++;
+	int total = 0;
+	int ch;
+	while ((ch = getchar()) && ch != '#'){
+		if (tolower(ch) == 'a' || tolower(ch) == 'e'){
+			total++;
+		}
+
 	};
+	printf("%d\n", total);
 	return 0;
 }

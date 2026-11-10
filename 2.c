@@ -1,14 +1,18 @@
 #include <stdio.h>
-#define HEIGHT 5
+#include <wchar.h>
+#include <locale.h>
 int main(void){
-	for (int start = 1; start <= HEIGHT; start++){
-		for (int start1 = 1; start1 <= start; start1++){
-			printf("1 ");
-		}
-		for (int start1 = 1; start1 <= HEIGHT - start; start1++){
-			printf("0 ");
-		}
-		printf("\n");
+	setlocale(LC_ALL, "");
+	int total = 0;
+	int wch;
+	while ((wch = getwchar()) != WEOF && wch != L'#'){
+		for (int i = 0; i*i <= wch; i++){
+			if (i*i == wch){
+				total++;
+				break;
+			};
+		};
 	};
+	printf("%d\n", total);
 	return 0;
 }

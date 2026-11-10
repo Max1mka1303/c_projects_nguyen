@@ -1,25 +1,28 @@
 #include <stdio.h>
 #include <math.h>
 int main(void){
-	double bell[8];
-    long long t[8][8];
-
-	t[0][0] = 1;
-    bell[0] = 1.0;
-
-    	for (int i = 1; i < 8; i++) {
-        	t[i][0] = t[i - 1][i - 1];
-		    for (int j = 1; j <= i; j++) {
-                t[i][j] = t[i][j - 1] + t[i - 1][j - 1];
-        	}
-		    bell[i] = (double)t[i][0];
-    	}
-	double sum = 0.0;
-	for (int i = 0; i < 8; i++) {
-		printf("%.2f ", bell[i]);
-		sum += bell[i];
+	double n;
+	double n1;
+	double n2;
+	double n3;
+	scanf("%lf", &n);
+	if (n < 20000){
+		n1 = n*0.02;
 	}
-	printf("\n%.2f\n", sum);
-	return 0;
+	else if (n >= 20000 && n <= 100000){
+		n1 = 20000.0*0.02;
+		n2 = (n-20000.0)*0.03;
+	}
+	else {
+		n1 = 20000.0*0.02;
+		n2 = 80000.0*0.03;
+		n3 = (n - 100000.0)*0.05;
+	}
+	double total = n1 + n2 + n3;
+	printf("%lf\n", n);
+	printf("%lf\n", n1);
+	printf("%lf\n", n2);
+	printf("%lf\n", n3);
+	printf("%lf\n", total);
 }
 
